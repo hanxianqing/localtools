@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0E3B2E">
+<title>QR Code Generator — Free Online | LocalTools</title>
+<meta name="description" content="Free QR code generator that runs entirely in your browser. Make QR codes for links, text and more, download as PNG — no sign-up, no tracking.">
+<link rel="canonical" href="https://localtools.pages.dev/tools/qr-generator.html">
+<meta property="og:title" content="QR Code Generator — Free Online | LocalTools">
+<meta property="og:description" content="Free QR code generator that runs entirely in your browser. Make QR codes for links, text and more, download as PNG — no sign-up, no tracking.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://localtools.pages.dev/tools/qr-generator.html">
+<meta property="og:site_name" content="LocalTools">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/vendor/qrcode.js"></script>
+<script src="/assets/js/qr-generator.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "LocalTools QR Code Generator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Free QR code generator that runs entirely in your browser. Make QR codes for links, text and more, download as PNG \u2014 no sign-up, no tracking."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are my QR codes tracked?", "acceptedAnswer": {"@type": "Answer", "text": "No. The code is generated in your browser and the image is a plain PNG. Nothing is logged, and the QR code itself contains only the text you typed."}}, {"@type": "Question", "name": "What can I put in a QR code?", "acceptedAnswer": {"@type": "Answer", "text": "A URL, plain text, or a Wi-Fi login (format: WIFI:T:WPA;S:network;P:password;;). Long text makes a denser code that is harder to scan \u2014 keep it short."}}, {"@type": "Question", "name": "Why is my QR code so dense?", "acceptedAnswer": {"@type": "Answer", "text": "Long URLs make dense codes. Use a short link, or lower the error correction level, for a cleaner code."}}, {"@type": "Question", "name": "Can I use the QR code commercially?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 the image is yours, free for any use, no attribution needed."}}, {"@type": "Question", "name": "How big should I print a QR code?", "acceptedAnswer": {"@type": "Answer", "text": "At least 2 \u00d7 2 cm (about 0.8 in) for a code scanned from a normal reading distance. For posters scanned from metres away, print it larger \u2014 the 1024 px download is made for that."}}, {"@type": "Question", "name": "Does the QR code expire?", "acceptedAnswer": {"@type": "Answer", "text": "No. The code is just your text drawn as squares \u2014 there is no server, no link shortener and nothing to expire. It works forever."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/">Local<span>Tools</span></a>
+<nav class="main"><a href="/tools/pdf-merge.html">PDF Merge</a><a href="/tools/image-compressor.html">Image Compressor</a><a href="/tools/qr-generator.html">QR Code Generator</a><div class="nav-drop"><button type="button" aria-haspopup="true">All tools &#9662;</button><div class="nav-menu"><span class="nav-cat">PDF</span><a href="/tools/pdf-merge.html">PDF Merge</a><span class="nav-cat">Images</span><a href="/tools/image-compressor.html">Image Compressor</a><a href="/tools/image-converter.html">Image Converter</a><span class="nav-cat">Text &amp; Code</span><a href="/tools/word-counter.html">Word Counter</a><a href="/tools/json-formatter.html">JSON Formatter</a><span class="nav-cat">Utilities</span><a href="/tools/qr-generator.html">QR Code Generator</a><a href="/tools/password-generator.html">Password Generator</a><a href="/tools/unit-converter.html">Unit Converter</a></div></div></nav>
+</div></header>
+<main>
+
+<section class="tool-hero"><div class="wrap">
+<div class="icon-tile" style="background:#E3F2F0;color:#0F766E"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 14v.01M14 21v.01M21 21v.01M18 18h.01"/></svg></div>
+<div>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Utilities &rsaquo; <b>QR Code Generator</b></nav>
+<h1>QR Code Generator — Make a QR code for any link or text</h1>
+<p>Free QR code generator that runs entirely in your browser. Make QR codes for links, text and more, download as PNG — no sign-up, no tracking.</p>
+</div>
+</div></section>
+<section><div class="wrap">
+
+<div class="toolbox">
+<label for="qr-text">1. Link or text for the QR code</label>
+<input type="text" id="qr-text" placeholder="https://example.com" autocomplete="off">
+<label for="qr-size">2. Size</label>
+<select id="qr-size"><option value="256">256 px — small</option><option value="512" selected>512 px — standard</option><option value="1024">1024 px — print</option></select>
+<label for="qr-ec">3. Error correction (higher = survives damage, but denser)</label>
+<select id="qr-ec"><option value="L">Low (7%)</option><option value="M" selected>Medium (15%)</option><option value="Q">Quartile (25%)</option><option value="H">High (30%)</option></select>
+<p style="margin-top:16px"><canvas id="qr-canvas" class="qr" width="512" height="512"></canvas></p>
+<p class="muted" id="qr-status"></p>
+<p><a class="btn" id="qr-dl" href="#" download="qr-code.png">Download QR code (PNG)</a></p>
+</div>
+
+<div class="privacy"><strong>Privacy first:</strong> this tool runs 100% in your
+browser. Your files and text are never uploaded to any server — there is no server here to upload to.
+You can even turn off your Wi-Fi after the page loads and it still works. No sign-up, no account, no tracking.</div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<h2>How it works</h2>
+<p class="section-sub">Three steps, no account, no waiting room.</p>
+
+<ol class="steps">
+<li><strong>Type a link or text</strong> — a website URL, a message, anything short.</li>
+<li><strong>Pick a size</strong> — 512 px is fine for screens, 1024 px for print.</li>
+<li><strong>Download the PNG</strong> — scan it with any phone camera to test it.</li>
+</ol>
+
+<h2>Good for</h2>
+<ul>
+<li>A QR code on a business card linking to your site</li><li>A menu QR code on a café table</li><li>A Wi-Fi login code for guests</li><li>A poster QR code linking to a form or video</li>
+</ul>
+</div></section>
+<section><div class="wrap">
+<h2>Frequently asked questions</h2>
+<div class="faq">
+<details><summary>Are my QR codes tracked?</summary><p>No. The code is generated in your browser and the image is a plain PNG. Nothing is logged, and the QR code itself contains only the text you typed.</p></details>
+<details><summary>What can I put in a QR code?</summary><p>A URL, plain text, or a Wi-Fi login (format: WIFI:T:WPA;S:network;P:password;;). Long text makes a denser code that is harder to scan — keep it short.</p></details>
+<details><summary>Why is my QR code so dense?</summary><p>Long URLs make dense codes. Use a short link, or lower the error correction level, for a cleaner code.</p></details>
+<details><summary>Can I use the QR code commercially?</summary><p>Yes — the image is yours, free for any use, no attribution needed.</p></details>
+<details><summary>How big should I print a QR code?</summary><p>At least 2 × 2 cm (about 0.8 in) for a code scanned from a normal reading distance. For posters scanned from metres away, print it larger — the 1024 px download is made for that.</p></details>
+<details><summary>Does the QR code expire?</summary><p>No. The code is just your text drawn as squares — there is no server, no link shortener and nothing to expire. It works forever.</p></details>
+</div>
+</div></section>
+<section class="alt"><div class="wrap">
+<h2>Related tools</h2>
+<p class="section-sub">More free tools that run on your device — no uploads, no sign-up.</p>
+<div class="grid"><article class="card"><div class="body">
+<div class="icon-tile" style="background:#E3F2F0;color:#0F766E"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 4l3 3M14 7l3 3"/></svg></div>
+<span class="cat-label" style="color:#0F766E">Utilities</span>
+<h3><a href="/tools/password-generator.html">Password Generator</a></h3>
+<p>Generate long, random passwords with the character sets you choose. Made with your browser's secure random generator.</p>
+<p><a class="btn small" href="/tools/password-generator.html">Open Password Generator</a></p>
+</div></article>
+<article class="card"><div class="body">
+<div class="icon-tile" style="background:#E3F2F0;color:#0F766E"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17L17 3l4 4L7 21z"/><path d="M8 16l1.5 1.5M11 13l1.5 1.5M14 10l1.5 1.5"/></svg></div>
+<span class="cat-label" style="color:#0F766E">Utilities</span>
+<h3><a href="/tools/unit-converter.html">Unit Converter</a></h3>
+<p>Convert between metric and imperial units — length, weight, volume, area, temperature, speed and data size.</p>
+<p><a class="btn small" href="/tools/unit-converter.html">Open Unit Converter</a></p>
+</div></article>
+<article class="card"><div class="body">
+<div class="icon-tile" style="background:#FBEAEA;color:#C0392B"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 11v6M9 14h6"/></svg></div>
+<span class="cat-label" style="color:#C0392B">PDF</span>
+<h3><a href="/tools/pdf-merge.html">PDF Merge</a></h3>
+<p>Merge several PDFs into a single file. Reorder pages, drop what you don't need, download the result.</p>
+<p><a class="btn small" href="/tools/pdf-merge.html">Open PDF Merge</a></p>
+</div></article></div>
+<p class="muted" style="margin-top:20px">All tools: <a href="/tools/pdf-merge.html">PDF Merge</a>, <a href="/tools/image-compressor.html">Image Compressor</a>, <a href="/tools/image-converter.html">Image Converter</a>, <a href="/tools/password-generator.html">Password Generator</a>, <a href="/tools/word-counter.html">Word Counter</a>, <a href="/tools/json-formatter.html">JSON Formatter</a>, <a href="/tools/unit-converter.html">Unit Converter</a>.</p>
+</div></section>
+
+</main>
+<footer class="site"><div class="wrap">
+<div class="foot-grid">
+<div>
+<h4>LocalTools</h4>
+<p>Free tools that run 100% in your browser. No uploads, no sign-up, no limits — your files never leave your device, because there is no server here to send them to. Made by the same maker as <a href="https://hanxianqing.github.io/">Merry Printables</a>, our sister site of free Christmas and party printables.</p>
+</div>
+<div>
+<h4>All tools</h4>
+<ul>
+<li><strong>PDF:</strong> <a href="/tools/pdf-merge.html">PDF Merge</a></li>
+<li><strong>Images:</strong> <a href="/tools/image-compressor.html">Image Compressor</a> &middot; <a href="/tools/image-converter.html">Image Converter</a></li>
+<li><strong>Text &amp; Code:</strong> <a href="/tools/word-counter.html">Word Counter</a> &middot; <a href="/tools/json-formatter.html">JSON Formatter</a></li>
+<li><strong>Utilities:</strong> <a href="/tools/qr-generator.html">QR Code Generator</a> &middot; <a href="/tools/password-generator.html">Password Generator</a> &middot; <a href="/tools/unit-converter.html">Unit Converter</a></li>
+</ul>
+</div>
+<div>
+<h4>Why LocalTools</h4>
+<ul>
+<li><a href="/">All tools</a></li>
+<li><a href="/tools/pdf-merge.html">Most popular: PDF Merge</a></li>
+<li><a href="/sitemap.xml">Sitemap</a></li>
+<li><a href="https://hanxianqing.github.io/">Merry Printables (sister site)</a></li>
+</ul>
+</div>
+</div>
+<div class="foot-bottom"><p>LocalTools — free, private, unlimited. No accounts, no tracking, no ads. Your files stay on your device.</p></div>
+</div></footer>
+</body>
+</html>

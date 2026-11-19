@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0E3B2E">
+<title>Image Converter — Free Online | LocalTools</title>
+<meta name="description" content="Free image format converter that runs entirely in your browser. Convert PNG, JPG and WebP files locally — nothing is uploaded, no sign-up.">
+<link rel="canonical" href="https://localtools.pages.dev/tools/image-converter.html">
+<meta property="og:title" content="Image Converter — Free Online | LocalTools">
+<meta property="og:description" content="Free image format converter that runs entirely in your browser. Convert PNG, JPG and WebP files locally — nothing is uploaded, no sign-up.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://localtools.pages.dev/tools/image-converter.html">
+<meta property="og:site_name" content="LocalTools">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="stylesheet" href="/assets/style.css">
+
+<script src="/assets/js/image-converter.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "LocalTools Image Converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Free image format converter that runs entirely in your browser. Convert PNG, JPG and WebP files locally \u2014 nothing is uploaded, no sign-up."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which format should I choose?", "acceptedAnswer": {"@type": "Answer", "text": "JPG for photos, PNG when you need transparency or crisp text, WebP when you want the smallest file on a modern website."}}, {"@type": "Question", "name": "Are my images uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Conversion runs in your browser. Your images never leave your device."}}, {"@type": "Question", "name": "Does converting lose quality?", "acceptedAnswer": {"@type": "Answer", "text": "PNG is lossless. JPG and WebP are lossy \u2014 quality 90% is visually near-identical to the original for most photos."}}, {"@type": "Question", "name": "Can I convert many images at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 select as many as you like; each one converts and downloads separately."}}, {"@type": "Question", "name": "Will converting a JPG to PNG make it better quality?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 converting can't add detail that was lost when the JPG was made. It just changes the container. PNG output is useful when you need transparency or lossless storage."}}, {"@type": "Question", "name": "Why does my PNG turn white when I convert to JPG?", "acceptedAnswer": {"@type": "Answer", "text": "JPG has no transparency, so transparent areas are filled with white. If you need transparency, convert to PNG or WebP instead."}}]}</script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/">Local<span>Tools</span></a>
+<nav class="main"><a href="/tools/pdf-merge.html">PDF Merge</a><a href="/tools/image-compressor.html">Image Compressor</a><a href="/tools/qr-generator.html">QR Code Generator</a><div class="nav-drop"><button type="button" aria-haspopup="true">All tools &#9662;</button><div class="nav-menu"><span class="nav-cat">PDF</span><a href="/tools/pdf-merge.html">PDF Merge</a><span class="nav-cat">Images</span><a href="/tools/image-compressor.html">Image Compressor</a><a href="/tools/image-converter.html">Image Converter</a><span class="nav-cat">Text &amp; Code</span><a href="/tools/word-counter.html">Word Counter</a><a href="/tools/json-formatter.html">JSON Formatter</a><span class="nav-cat">Utilities</span><a href="/tools/qr-generator.html">QR Code Generator</a><a href="/tools/password-generator.html">Password Generator</a><a href="/tools/unit-converter.html">Unit Converter</a></div></div></nav>
+</div></header>
+<main>
+
+<section class="tool-hero"><div class="wrap">
+<div class="icon-tile" style="background:#FBF3D9;color:#8A6D00"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></div>
+<div>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; Images &rsaquo; <b>Image Converter</b></nav>
+<h1>Image Converter — Convert images between PNG, JPG and WebP</h1>
+<p>Free image format converter that runs entirely in your browser. Convert PNG, JPG and WebP files locally — nothing is uploaded, no sign-up.</p>
+</div>
+</div></section>
+<section><div class="wrap">
+
+<div class="toolbox">
+<label for="conv-input">1. Choose images (JPG, PNG, WebP)</label>
+<input type="file" id="conv-input" accept="image/*" multiple>
+<label for="conv-fmt">2. Convert to</label>
+<select id="conv-fmt"><option value="jpg">JPG</option><option value="png">PNG</option><option value="webp">WebP</option></select>
+<div id="q-row"><label for="conv-q">Quality (JPG/WebP): <span id="conv-q-val">90%</span></label>
+<input type="range" id="conv-q" min="10" max="100" value="90"></div>
+<ul class="filelist" id="conv-list"></ul>
+<p class="muted" id="conv-status"></p>
+</div>
+
+<div class="privacy"><strong>Privacy first:</strong> this tool runs 100% in your
+browser. Your files and text are never uploaded to any server — there is no server here to upload to.
+You can even turn off your Wi-Fi after the page loads and it still works. No sign-up, no account, no tracking.</div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<h2>How it works</h2>
+<p class="section-sub">Three steps, no account, no waiting room.</p>
+
+<ol class="steps">
+<li><strong>Choose images</strong> — any mix of JPG, PNG and WebP.</li>
+<li><strong>Pick the target format</strong> — and quality for JPG/WebP.</li>
+<li><strong>Download</strong> — each converted file downloads with the new extension.</li>
+</ol>
+
+<h2>Good for</h2>
+<ul>
+<li>Turning PNG screenshots into smaller JPGs</li><li>Converting photos to WebP for a faster website</li><li>Preparing images for apps that only accept JPG</li><li>Converting WebP files back to PNG</li>
+</ul>
+</div></section>
+<section><div class="wrap">
+<h2>Frequently asked questions</h2>
+<div class="faq">
+<details><summary>Which format should I choose?</summary><p>JPG for photos, PNG when you need transparency or crisp text, WebP when you want the smallest file on a modern website.</p></details>
+<details><summary>Are my images uploaded?</summary><p>No. Conversion runs in your browser. Your images never leave your device.</p></details>
+<details><summary>Does converting lose quality?</summary><p>PNG is lossless. JPG and WebP are lossy — quality 90% is visually near-identical to the original for most photos.</p></details>
+<details><summary>Can I convert many images at once?</summary><p>Yes — select as many as you like; each one converts and downloads separately.</p></details>
+<details><summary>Will converting a JPG to PNG make it better quality?</summary><p>No — converting can't add detail that was lost when the JPG was made. It just changes the container. PNG output is useful when you need transparency or lossless storage.</p></details>
+<details><summary>Why does my PNG turn white when I convert to JPG?</summary><p>JPG has no transparency, so transparent areas are filled with white. If you need transparency, convert to PNG or WebP instead.</p></details>
+</div>
+</div></section>
+<section class="alt"><div class="wrap">
+<h2>Related tools</h2>
+<p class="section-sub">More free tools that run on your device — no uploads, no sign-up.</p>
+<div class="grid"><article class="card"><div class="body">
+<div class="icon-tile" style="background:#FBF3D9;color:#8A6D00"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V5a1 1 0 0 1 1-1h4M20 9V5a1 1 0 0 0-1-1h-4M4 15v4a1 1 0 0 0 1 1h4M20 15v4a1 1 0 0 1-1 1h-4"/><path d="M8 12h8"/></svg></div>
+<span class="cat-label" style="color:#8A6D00">Images</span>
+<h3><a href="/tools/image-compressor.html">Image Compressor</a></h3>
+<p>Compress JPG, PNG and WebP images in your browser. Pick a quality level and max size, watch the file shrink.</p>
+<p><a class="btn small" href="/tools/image-compressor.html">Open Image Compressor</a></p>
+</div></article>
+<article class="card"><div class="body">
+<div class="icon-tile" style="background:#FBEAEA;color:#C0392B"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 11v6M9 14h6"/></svg></div>
+<span class="cat-label" style="color:#C0392B">PDF</span>
+<h3><a href="/tools/pdf-merge.html">PDF Merge</a></h3>
+<p>Merge several PDFs into a single file. Reorder pages, drop what you don't need, download the result.</p>
+<p><a class="btn small" href="/tools/pdf-merge.html">Open PDF Merge</a></p>
+</div></article>
+<article class="card"><div class="body">
+<div class="icon-tile" style="background:#E3F2F0;color:#0F766E"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 14v.01M14 21v.01M21 21v.01M18 18h.01"/></svg></div>
+<span class="cat-label" style="color:#0F766E">Utilities</span>
+<h3><a href="/tools/qr-generator.html">QR Code Generator</a></h3>
+<p>Create a QR code for a URL, Wi-Fi details, or plain text. Download it as a PNG and print it anywhere.</p>
+<p><a class="btn small" href="/tools/qr-generator.html">Open QR Code Generator</a></p>
+</div></article></div>
+<p class="muted" style="margin-top:20px">All tools: <a href="/tools/pdf-merge.html">PDF Merge</a>, <a href="/tools/image-compressor.html">Image Compressor</a>, <a href="/tools/qr-generator.html">QR Code Generator</a>, <a href="/tools/password-generator.html">Password Generator</a>, <a href="/tools/word-counter.html">Word Counter</a>, <a href="/tools/json-formatter.html">JSON Formatter</a>, <a href="/tools/unit-converter.html">Unit Converter</a>.</p>
+</div></section>
+
+</main>
+<footer class="site"><div class="wrap">
+<div class="foot-grid">
+<div>
+<h4>LocalTools</h4>
+<p>Free tools that run 100% in your browser. No uploads, no sign-up, no limits — your files never leave your device, because there is no server here to send them to. Made by the same maker as <a href="https://hanxianqing.github.io/">Merry Printables</a>, our sister site of free Christmas and party printables.</p>
+</div>
+<div>
+<h4>All tools</h4>
+<ul>
+<li><strong>PDF:</strong> <a href="/tools/pdf-merge.html">PDF Merge</a></li>
+<li><strong>Images:</strong> <a href="/tools/image-compressor.html">Image Compressor</a> &middot; <a href="/tools/image-converter.html">Image Converter</a></li>
+<li><strong>Text &amp; Code:</strong> <a href="/tools/word-counter.html">Word Counter</a> &middot; <a href="/tools/json-formatter.html">JSON Formatter</a></li>
+<li><strong>Utilities:</strong> <a href="/tools/qr-generator.html">QR Code Generator</a> &middot; <a href="/tools/password-generator.html">Password Generator</a> &middot; <a href="/tools/unit-converter.html">Unit Converter</a></li>
+</ul>
+</div>
+<div>
+<h4>Why LocalTools</h4>
+<ul>
+<li><a href="/">All tools</a></li>
+<li><a href="/tools/pdf-merge.html">Most popular: PDF Merge</a></li>
+<li><a href="/sitemap.xml">Sitemap</a></li>
+<li><a href="https://hanxianqing.github.io/">Merry Printables (sister site)</a></li>
+</ul>
+</div>
+</div>
+<div class="foot-bottom"><p>LocalTools — free, private, unlimited. No accounts, no tracking, no ads. Your files stay on your device.</p></div>
+</div></footer>
+</body>
+</html>
