@@ -1,0 +1,22 @@
+name: Unzip site archive
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unzip and clean up
+        run: |
+          unzip -o localtools-site.zip -d .
+          rm localtools-site.zip
+          rm .github/workflows/unzip.yml
+      - name: Commit extracted files
+        run: |
+          git config user.name "hanxianqing"
+          git config user.email "hanxianqing@users.noreply.github.com"
+          git add -A
+          git commit -m "Deploy LocalTools site" || echo "No changes to commit"
+          git push
